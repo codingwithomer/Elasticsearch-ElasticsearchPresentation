@@ -1,3 +1,3 @@
-# Elasticsearch-ElasticsearchPresentation
+# Elasticsearch.Net & Nest
 
-## Elasticsearch sunumu için hazırlanmıştır.
+## Elasticsearch.Net Nedir?
