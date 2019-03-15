@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.Core", "WhatIsElasticSearch.Core\WhatIsElasticSearch.Core.csproj", "{3F297DE1-A303-42EC-917B-C180DC86E422}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.Entities", "WhatIsElasticSearch.Entities\WhatIsElasticSearch.Entities.csproj", "{083C8D18-4B9D-4CF0-881D-3D507A9C7713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.DAL", "WhatIsElasticSearch.DAL\WhatIsElasticSearch.DAL.csproj", "{56810888-A118-4636-9535-1B61B28E6D9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.BLL", "WhatIsElasticSearch.BLL\WhatIsElasticSearch.BLL.csproj", "{30C30EE3-16B6-4722-8008-018F928DC8DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.MvcWebUI", "WhatIsElasticSearch.MvcWebUI\WhatIsElasticSearch.MvcWebUI.csproj", "{D185949B-58F2-4B6F-B67A-DDC7D47E0CD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{3F297DE1-A303-42EC-917B-C180DC86E422}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F297DE1-A303-42EC-917B-C180DC86E422}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F297DE1-A303-42EC-917B-C180DC86E422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{083C8D18-4B9D-4CF0-881D-3D507A9C7713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{083C8D18-4B9D-4CF0-881D-3D507A9C7713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{083C8D18-4B9D-4CF0-881D-3D507A9C7713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{083C8D18-4B9D-4CF0-881D-3D507A9C7713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56810888-A118-4636-9535-1B61B28E6D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56810888-A118-4636-9535-1B61B28E6D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56810888-A118-4636-9535-1B61B28E6D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56810888-A118-4636-9535-1B61B28E6D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C30EE3-16B6-4722-8008-018F928DC8DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C30EE3-16B6-4722-8008-018F928DC8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C30EE3-16B6-4722-8008-018F928DC8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C30EE3-16B6-4722-8008-018F928DC8DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D185949B-58F2-4B6F-B67A-DDC7D47E0CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D185949B-58F2-4B6F-B67A-DDC7D47E0CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D185949B-58F2-4B6F-B67A-DDC7D47E0CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D185949B-58F2-4B6F-B67A-DDC7D47E0CD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
