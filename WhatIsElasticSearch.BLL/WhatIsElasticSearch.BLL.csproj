@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WhatIsElasticSearch.Core\WhatIsElasticSearch.Core.csproj" />
+    <ProjectReference Include="..\WhatIsElasticSearch.DAL\WhatIsElasticSearch.DAL.csproj" />
+    <ProjectReference Include="..\WhatIsElasticSearch.Entities\WhatIsElasticSearch.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

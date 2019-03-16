@@ -10,7 +10,7 @@ namespace WhatIsElasticSearch.DAL.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("");
+            optionsBuilder.UseSqlServer(@"Server=OMERCAN\SQLEXPRESS;Database=Northwind;Trusted_Connection=true");
             base.OnConfiguring(optionsBuilder);
         }
 
