@@ -21,7 +21,7 @@ namespace WhatIsElasticSearch.BLL.Managers
 
         public void Delete(int productId)
         {
-            Product product = _productDAL.Get(p => p.ProductId == productId);
+            Product product = new Product() { ProductId = productId };
             _productDAL.Delete(product);
         }
 

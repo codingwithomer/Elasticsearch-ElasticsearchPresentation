@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.Core", "WhatIsElasticSearch.Core\WhatIsElasticSearch.Core.csproj", "{3F297DE1-A303-42EC-917B-C180DC86E422}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatIsElasticSearch.Core", "WhatIsElasticSearch.Core\WhatIsElasticSearch.Core.csproj", "{3F297DE1-A303-42EC-917B-C180DC86E422}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.Entities", "WhatIsElasticSearch.Entities\WhatIsElasticSearch.Entities.csproj", "{083C8D18-4B9D-4CF0-881D-3D507A9C7713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatIsElasticSearch.Entities", "WhatIsElasticSearch.Entities\WhatIsElasticSearch.Entities.csproj", "{083C8D18-4B9D-4CF0-881D-3D507A9C7713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.DAL", "WhatIsElasticSearch.DAL\WhatIsElasticSearch.DAL.csproj", "{56810888-A118-4636-9535-1B61B28E6D9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatIsElasticSearch.DAL", "WhatIsElasticSearch.DAL\WhatIsElasticSearch.DAL.csproj", "{56810888-A118-4636-9535-1B61B28E6D9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.BLL", "WhatIsElasticSearch.BLL\WhatIsElasticSearch.BLL.csproj", "{30C30EE3-16B6-4722-8008-018F928DC8DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatIsElasticSearch.BLL", "WhatIsElasticSearch.BLL\WhatIsElasticSearch.BLL.csproj", "{30C30EE3-16B6-4722-8008-018F928DC8DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsElasticSearch.MvcWebUI", "WhatIsElasticSearch.MvcWebUI\WhatIsElasticSearch.MvcWebUI.csproj", "{D185949B-58F2-4B6F-B67A-DDC7D47E0CD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatIsElasticSearch.MvcWebUI", "WhatIsElasticSearch.MvcWebUI\WhatIsElasticSearch.MvcWebUI.csproj", "{D185949B-58F2-4B6F-B67A-DDC7D47E0CD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
