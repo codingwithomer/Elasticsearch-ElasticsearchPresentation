@@ -15,13 +15,15 @@ namespace WhatIsElasticSearch.MvcWebUI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<IProductDAL, EFProductDAL>();
 
             services.AddScoped<ICategoryDAL, EFCategoryDAL>();
             services.AddScoped<ICategoryService, CategoryManager>();
+
+            services.AddSession();
+            services.AddDistributedMemoryCache();
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -35,6 +37,7 @@ namespace WhatIsElasticSearch.MvcWebUI
 
             app.UseFileServer();
             app.UseNodeModules(env.ContentRootPath);
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
         }
     }
