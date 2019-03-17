@@ -4,8 +4,8 @@ services:
     container_name: elastic_presentation
     hostname: develastic
     build:
-      context: ..
-      dockerfile: build/Dockerfile-elastic
+      context: .
+      dockerfile: Build/Dockerfile-elastic
     ports:
       - "5005:5005"
   pgadmin4:
@@ -20,8 +20,8 @@ services:
       - postgresql:postgres
   postgresql:
     build:
-      context: ..
-      dockerfile: build/Dockerfile-postgresql 
+      context: .
+      dockerfile: Build/Dockerfile-postgresql 
     container_name: elastic_postgresql
     hostname: postgres
     env_file: pg-env.list
