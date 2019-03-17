@@ -1,0 +1,36 @@
+﻿version: "3"
+services:
+  elastic:
+    container_name: elastic_presentation
+    hostname: develastic
+    build:
+      context: ..
+      dockerfile: Build/Dockerfile-elastic
+    ports:
+      - "5005:5005"
+    expose:
+      - "5005"
+#   pgadmin4:
+#     image: dpage/pgadmin4
+#     container_name: elastic_pgadmin4
+#     env_file: pgadmin-env.list
+#     ports:
+#     - "5050:5050"
+#     volumes:
+#     - pga4volume:/var/lib/pgadmin
+#     links:
+#       - postgresql:postgres
+#   postgresql:
+#     build:
+#       context: .
+#       dockerfile: Build/Dockerfile-postgresql
+#     container_name: elastic_postgresql
+#     hostname: postgres
+#     env_file: pg-env.list
+#     ports:
+#     - "5432:5432"
+#     volumes:
+#     - psqlvolume:/pgdata
+# volumes:
+#   pga4volume:
+#   psqlvolume:
