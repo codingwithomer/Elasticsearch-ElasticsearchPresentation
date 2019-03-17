@@ -1,7 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using WhatIsElasticSearch.Entities;
 
 namespace WhatIsElasticSearch.DAL.EntityFramework
@@ -10,7 +7,6 @@ namespace WhatIsElasticSearch.DAL.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=OMERCAN\SQLEXPRESS;Database=Northwind;Trusted_Connection=true");
             base.OnConfiguring(optionsBuilder);
         }
 

@@ -39,5 +39,10 @@ namespace WhatIsElasticSearch.BLL.Managers
         {
             _productDAL.Update(product);
         }
+
+        public Product GetById(int productId)
+        {
+            return _productDAL.Get(p => p.ProductId == productId);
+        }
     }
 }

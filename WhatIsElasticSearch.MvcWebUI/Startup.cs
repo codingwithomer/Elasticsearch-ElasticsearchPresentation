@@ -1,29 +1,41 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WhatIsElasticSearch.BLL.Interfaces;
-using WhatIsElasticSearch.BLL.Managers;
 using WhatIsElasticSearch.DAL.EntityFramework;
-using WhatIsElasticSearch.DAL.Interfaces;
+using WhatIsElasticSearch.MvcWebUI.DependencyResolvers;
 using WhatIsElasticSearch.MvcWebUI.Middlewares;
 
 namespace WhatIsElasticSearch.MvcWebUI
 {
     public class Startup
     {
+        public IConfigurationRoot Configuration { get; }
+
+        public Startup(IHostingEnvironment environment)
+        {
+            var builder = new ConfigurationBuilder().SetBasePath(environment.ContentRootPath)
+                                                    .AddJsonFile("appsettings.json",false,true)
+                                                    .AddEnvironmentVariables();
+            Configuration = builder.Build();
+        }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IProductService, ProductManager>();
-            services.AddScoped<IProductDAL, EFProductDAL>();
+            Ioc.RegisterServices(services, Configuration);
 
-            services.AddScoped<ICategoryDAL, EFCategoryDAL>();
-            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddDbContext<EFDbContext>(
+                (options) =>
+                    options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
+                        x => x.MigrationsAssembly("WhatIsElasticSearch.DAL"))
+            );
 
             services.AddSession();
             services.AddDistributedMemoryCache();
             services.AddMvc();
+            services.AddEntityFrameworkNpgsql();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
