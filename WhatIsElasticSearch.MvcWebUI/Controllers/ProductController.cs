@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WhatIsElasticSearch.BLL.Interfaces;
 using WhatIsElasticSearch.Entities;
+using WhatIsElasticSearch.MvcWebUI.Models;
 
 namespace WhatIsElasticSearch.MvcWebUI.Controllers
 {
@@ -14,11 +17,22 @@ namespace WhatIsElasticSearch.MvcWebUI.Controllers
             _productService = productService;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int page = 1,int category = 0)
         {
-            List<Product> products = _productService.GetAll();
+            int pageSize = 10;
 
-            return View(products);
+            List<Product> products = _productService.GetByCategory(category);
+
+            ProductListViewModel productList = new ProductListViewModel
+            {
+                Products = products.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                PageCount = (int)Math.Ceiling(products.Count / (double)pageSize),
+                PageSize = pageSize,
+                CurrentCategory = category,
+                CurrentPage = page
+            };
+
+            return View(productList);
         }
     }
 }

@@ -30,9 +30,9 @@ namespace WhatIsElasticSearch.BLL.Managers
             return _productDAL.GetList();
         }
 
-        public List<Product> GetByCategoryId(int categoryId)
+        public List<Product> GetByCategory(int categoryId)
         {
-            return _productDAL.GetList(p => p.CategoryId == categoryId);
+            return _productDAL.GetList(p => p.CategoryId == categoryId || categoryId == 0);
         }
 
         public void Update(Product product)

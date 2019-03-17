@@ -5,7 +5,7 @@ using WhatIsElasticSearch.Entities;
 
 namespace WhatIsElasticSearch.BLL.Managers
 {
-    class CategoryManager : ICategoryService
+    public class CategoryManager : ICategoryService
     {
         private readonly ICategoryDAL _categoryDAL;
 

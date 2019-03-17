@@ -6,6 +6,7 @@ using WhatIsElasticSearch.BLL.Interfaces;
 using WhatIsElasticSearch.BLL.Managers;
 using WhatIsElasticSearch.DAL.EntityFramework;
 using WhatIsElasticSearch.DAL.Interfaces;
+using WhatIsElasticSearch.MvcWebUI.Middlewares;
 
 namespace WhatIsElasticSearch.MvcWebUI
 {
@@ -15,8 +16,12 @@ namespace WhatIsElasticSearch.MvcWebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<IProductDAL, EFProductDAL>();
+
+            services.AddScoped<ICategoryDAL, EFCategoryDAL>();
+            services.AddScoped<ICategoryService, CategoryManager>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -28,6 +33,8 @@ namespace WhatIsElasticSearch.MvcWebUI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseFileServer();
+            app.UseNodeModules(env.ContentRootPath);
             app.UseMvcWithDefaultRoute();
         }
     }
