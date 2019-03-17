@@ -17,7 +17,7 @@ namespace WhatIsElasticSearch.MvcWebUI
         public Startup(IHostingEnvironment environment)
         {
             var builder = new ConfigurationBuilder().SetBasePath(environment.ContentRootPath)
-                                                    .AddJsonFile("appsettings.json",false,true)
+                                                    .AddJsonFile("appsettings.json", false, true)
                                                     .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -26,11 +26,7 @@ namespace WhatIsElasticSearch.MvcWebUI
         {
             Ioc.RegisterServices(services, Configuration);
 
-            services.AddDbContext<EFDbContext>(
-                (options) =>
-                    options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
-                        x => x.MigrationsAssembly("WhatIsElasticSearch.DAL"))
-            );
+            services.AddDbContext<EFDbContext>();
 
             services.AddSession();
             services.AddDistributedMemoryCache();

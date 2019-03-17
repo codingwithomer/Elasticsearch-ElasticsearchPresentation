@@ -21,7 +21,7 @@ namespace WhatIsElasticSearch.BLL.Managers
 
         public void Delete(int productId)
         {
-            Product product = new Product() { ProductId = productId };
+            Product product = new Product() { product_id = productId };
             _productDAL.Delete(product);
         }
 
@@ -32,7 +32,7 @@ namespace WhatIsElasticSearch.BLL.Managers
 
         public List<Product> GetByCategory(int categoryId)
         {
-            return _productDAL.GetList(p => p.CategoryId == categoryId || categoryId == 0);
+            return _productDAL.GetList(p => p.category_id == categoryId || categoryId == 0);
         }
 
         public void Update(Product product)
@@ -42,7 +42,7 @@ namespace WhatIsElasticSearch.BLL.Managers
 
         public Product GetById(int productId)
         {
-            return _productDAL.Get(p => p.ProductId == productId);
+            return _productDAL.Get(p => p.product_id == productId);
         }
     }
 }

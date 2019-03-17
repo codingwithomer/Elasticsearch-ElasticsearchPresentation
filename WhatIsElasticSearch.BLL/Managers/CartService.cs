@@ -10,12 +10,12 @@ namespace WhatIsElasticSearch.BLL.Managers
     {
         public void AddToCart(Cart cart, Product product)
         {
-            CartLine cartLine = cart.CartLines.FirstOrDefault(c => c.Product.ProductId == product.ProductId);
+            CartLine cartLine = cart.CartLines.FirstOrDefault(c => c.product.product_id == product.product_id);
 
             if (cartLine != null)
-                cartLine.Quantity++;
+                cartLine.quantity++;
 
-            cart.CartLines.Add(new CartLine { Product = product, Quantity = 1 });
+            cart.CartLines.Add(new CartLine { product = product, quantity = 1 });
         }
 
         public List<CartLine> List(Cart cart)
@@ -25,7 +25,7 @@ namespace WhatIsElasticSearch.BLL.Managers
 
         public void RemoveFromCart(Cart cart, int productId)
         {
-            cart.CartLines.Remove(cart.CartLines.FirstOrDefault(c => c.Product.ProductId == productId));
+            cart.CartLines.Remove(cart.CartLines.FirstOrDefault(c => c.product.product_id == productId));
         }
     }
 }

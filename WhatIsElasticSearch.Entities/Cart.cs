@@ -12,9 +12,9 @@ namespace WhatIsElasticSearch.Entities
 
         public List<CartLine> CartLines { get; set; }
 
-        public decimal Total
+        public float Total
         {
-            get { return CartLines.Sum(cl => cl.Product.UnitPrice * cl.Quantity); }
+            get { return CartLines.Sum(cl => 1.0F * cl.quantity); }
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class CartLine
     {
-        public Product Product { get; set; }
-        public int Quantity { get; set; }
+        public Product product { get; set; }
+        public int quantity { get; set; }
     }
 }

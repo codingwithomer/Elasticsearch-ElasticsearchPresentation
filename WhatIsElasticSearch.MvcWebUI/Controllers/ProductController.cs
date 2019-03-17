@@ -17,10 +17,11 @@ namespace WhatIsElasticSearch.MvcWebUI.Controllers
             _productService = productService;
         }
 
-        public ActionResult Index(int page = 1,int category = 0)
+        public ActionResult Index(int page = 1, int category = 1)
         {
             int pageSize = 10;
 
+            category = 1;
             List<Product> products = _productService.GetByCategory(category);
 
             ProductListViewModel productList = new ProductListViewModel
