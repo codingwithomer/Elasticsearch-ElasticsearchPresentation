@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+      <None Update="Build\Northwind.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Build\docker-compose.yml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

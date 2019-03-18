@@ -7,7 +7,7 @@ namespace WhatIsElasticSearch.DAL.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlite("Data Source=../Northwind.db");
+            options.UseSqlite("Data Source=Northwind.db");
             base.OnConfiguring(options);
         }
 
