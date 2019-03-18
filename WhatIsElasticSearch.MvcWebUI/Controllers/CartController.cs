@@ -33,7 +33,7 @@ namespace WhatIsElasticSearch.MvcWebUI.Controllers
 
             if (!TempData.ContainsKey("message"))
             {
-                TempData.Add("message", string.Format("Your product, {0}, was successfully added to the cart.", productToBeAdded.product_name));
+                TempData.Add("message", string.Format("Your product, {0}, was successfully added to the cart.", productToBeAdded.ProductName));
             }
 
             return RedirectToAction("Index", "Product");

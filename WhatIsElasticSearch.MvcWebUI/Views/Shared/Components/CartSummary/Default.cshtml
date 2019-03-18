@@ -4,7 +4,7 @@
     @foreach (var cartItem in Model.Cart.CartLines)
     {
         <li>
-            <a>@cartItem.product.product_name <span class="badge">@cartItem.quantity</span></a>
+            <a>@cartItem.Product.ProductName <span class="badge">@cartItem.Quantity</span></a>
         </li>
     }
 

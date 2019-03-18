@@ -1,4 +1,0 @@
-FROM crunchydata/crunchy-postgres:centos7-11.1-2.3.0
-ADD Build/setup.sql /pgconf
-ADD Build/postgresql.conf /pgconf
-EXPOSE 5432/tcp

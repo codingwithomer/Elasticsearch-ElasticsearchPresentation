@@ -6,7 +6,7 @@ namespace WhatIsElasticSearch.Entities
     public class Category : IEntity
     {
         [Key]
-        public int category_id { get; set; }
-        public string category_name { get; set; }
+        public int Id { get; set; }
+        public string CategoryName { get; set; }
     }
 }

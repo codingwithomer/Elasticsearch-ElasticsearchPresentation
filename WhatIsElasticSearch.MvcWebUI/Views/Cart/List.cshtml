@@ -11,7 +11,7 @@
     <thead>
         <tr>
             <th>Product Name</th>
-            <!-- <th>Unit Price</th> -->
+             <th>Unit Price</th>
             <th>Units In Stock</th>
             <th>Quantity</th>
             <th></th>
@@ -21,12 +21,12 @@
         @foreach (var item in Model.Cart.CartLines)
         {
             <tr>
-                <td>@item.product.product_name</td>
-                <!-- <td>item.product.unit_price</td> -->
-                <td>@item.product.units_in_stock</td>
-                <td>@item.quantity</td>
+                <td>@item.Product.ProductName</td>
+                <td>item.Product.UnitPrice</td> 
+                <td>@item.Product.UnitsInStock</td>
+                <td>@item.Quantity</td>
                 <td class="text-right">
-                    <a class="btn btn-xs btn-danger" asp-controller="Cart" asp-action="Remove" asp-route-productId="@item.product.product_id"><span class="glyphicon glyphicon-remove"></span>Remove from cart</a>
+                    <a class="btn btn-xs btn-danger" asp-controller="Cart" asp-action="Remove" asp-route-productId="@item.Product.Id"><span class="glyphicon glyphicon-remove"></span>Remove from cart</a>
                 </td>
             </tr>
         }

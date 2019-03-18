@@ -14,7 +14,7 @@ namespace WhatIsElasticSearch.Entities
 
         public float Total
         {
-            get { return CartLines.Sum(cl => 1.0F * cl.quantity); }
+            get { return CartLines.Sum(cl => cl.Product.UnitPrice * cl.Quantity); }
         }
     }
 }

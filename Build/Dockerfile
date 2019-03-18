@@ -13,6 +13,8 @@ RUN dotnet build "WhatIsElasticSearch.MvcWebUI.csproj" -c Release -o /app
 FROM build AS publish
 RUN dotnet publish "WhatIsElasticSearch.MvcWebUI.csproj" -c Release -o /app
 RUN mkdir '/app/node_modules'
+ADD Northwind.db /app 
+
 
 FROM base AS final
 WORKDIR /app

@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using WhatIsElasticSearch.DAL.EntityFramework;
 using WhatIsElasticSearch.MvcWebUI.DependencyResolvers;
 using WhatIsElasticSearch.MvcWebUI.Middlewares;
+using Microsoft.EntityFrameworkCore.Sqlite;
 
 namespace WhatIsElasticSearch.MvcWebUI
 {
@@ -31,7 +32,7 @@ namespace WhatIsElasticSearch.MvcWebUI
             services.AddSession();
             services.AddDistributedMemoryCache();
             services.AddMvc();
-            services.AddEntityFrameworkNpgsql();
+            services.AddEntityFrameworkSqlite();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -47,6 +48,10 @@ namespace WhatIsElasticSearch.MvcWebUI
             app.UseNodeModules(env.ContentRootPath);
             app.UseSession();
             app.UseMvcWithDefaultRoute();
+            app.UseMvc((routes) =>
+            {
+                routes.MapRoute("default", "{controller=Presentation}/{action=Index}/{id?}");
+            });
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace WhatIsElasticSearch.MvcWebUI.Controllers
 {
-    public class HomeController:Controller
+    public class PresentationController:Controller
     {
         public ActionResult Index()
         {

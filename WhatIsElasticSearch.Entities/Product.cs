@@ -6,10 +6,10 @@ namespace WhatIsElasticSearch.Entities
     public class Product : IEntity
     {
         [Key]
-        public int product_id { get; set; }
-        public string product_name { get; set; }
-        public int category_id { get; set; }
-        //public float unit_price { get; set; }
-        public short units_in_stock { get; set; }
+        public int Id { get; set; }
+        public string ProductName { get; set; }
+        public int CategoryId { get; set; }
+        public float UnitPrice { get; set; }
+        public short UnitsInStock { get; set; }
     }
 }
