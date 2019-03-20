@@ -8,7 +8,7 @@
 <div class="row">
     <a asp-controller="Admin" asp-action="AddProduct" class="btn btn-xs btn-success">Add new product</a>
 </div>
-<div>
+<div class="row">
     <table class="table table-responsive">
         <thead>
             <tr>
@@ -22,13 +22,15 @@
         <tbody>
             @foreach (var product in Model.Products)
             {
-            <tr>
-                <td>@product.ProductName</td>
-                <td>product.UnitPrice.ToString("#.##")</td>
-                <td>@product.UnitsInStock</td>
-                <td><a class="btn btn-xs btn-primary" asp-controller="Admin" asp-action="UpdateProduct" asp-route-productId="@product.Id">Update product</a></td>
-                <td><a class="btn btn-xs btn-danger" asp-controller="Admin" asp-action="RemoveProduct" asp-route-productId="@product.Id">Remove product</a></td>
-            </tr>
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>@product.UnitPrice.ToString("#.##")</td>
+                    <td>@product.UnitsInStock</td>
+                    <td>
+                        <a class="btn btn-xs btn-primary" asp-controller="Admin" asp-action="UpdateProduct" asp-route-productId="@product.Id"><span class="glyphicon glyphicon-pencil"></span> Update product</a>
+                        <a class="btn btn-xs btn-danger" asp-controller="Admin" asp-action="RemoveProduct" asp-route-productId="@product.Id"><span class="glyphicon glyphicon-remove"></span> Remove product</a>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>

@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WhatIsElasticSearch.DAL.EntityFramework;
 using WhatIsElasticSearch.MvcWebUI.DependencyResolvers;
+using WhatIsElasticSearch.MvcWebUI.Extensions;
 using WhatIsElasticSearch.MvcWebUI.Middlewares;
-using Microsoft.EntityFrameworkCore.Sqlite;
 
 namespace WhatIsElasticSearch.MvcWebUI
 {
@@ -25,14 +24,14 @@ namespace WhatIsElasticSearch.MvcWebUI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            Ioc.RegisterServices(services, Configuration);
-
             services.AddDbContext<EFDbContext>();
-
             services.AddSession();
             services.AddDistributedMemoryCache();
             services.AddMvc();
             services.AddEntityFrameworkSqlite();
+            services.AddElasticsearch(Configuration);
+
+            Ioc.RegisterServices(services, Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
