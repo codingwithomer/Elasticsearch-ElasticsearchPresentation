@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WhatIsElasticSearch.BLL.Interfaces;
+using WhatIsElasticSearch.MvcWebUI.Models;
 
 namespace WhatIsElasticSearch.MvcWebUI.Controllers
 {
@@ -14,7 +15,10 @@ namespace WhatIsElasticSearch.MvcWebUI.Controllers
 
         public ActionResult Index()
         {
-            var model = _productService.GetAll();
+            var model = new ProductListViewModel
+            {
+                Products = _productService.GetAll()
+            };
 
             return View(model);
         }
