@@ -1,6 +1,6 @@
 ﻿version: "3"
 services:
-  elastic:
+  elastic_presentation:
     container_name: elastic_presentation
     hostname: develastic
     build:

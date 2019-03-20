@@ -1,5 +1,6 @@
 FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
 WORKDIR /app
+PORT 
 EXPOSE 5005/tcp
 
 FROM microsoft/dotnet:2.1-sdk AS build
