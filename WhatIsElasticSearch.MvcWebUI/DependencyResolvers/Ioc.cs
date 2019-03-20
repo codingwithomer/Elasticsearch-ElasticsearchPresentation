@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WhatIsElasticSearch.BLL.Interfaces;
 using WhatIsElasticSearch.BLL.Managers;
+using WhatIsElasticSearch.DAL.Elasticsearch;
 using WhatIsElasticSearch.DAL.EntityFramework;
 using WhatIsElasticSearch.DAL.Interfaces;
 using WhatIsElasticSearch.MvcWebUI.Services;
@@ -25,6 +26,8 @@ namespace WhatIsElasticSearch.MvcWebUI.DependencyResolvers
             services.AddSingleton<ICartSessionService, CartSessionService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddSingleton<IElasticContext, ElasticContext>();
 
             _serviceProvider = services.BuildServiceProvider();
         }

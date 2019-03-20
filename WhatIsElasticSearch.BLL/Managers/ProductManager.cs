@@ -17,6 +17,7 @@ namespace WhatIsElasticSearch.BLL.Managers
         public void Add(Product product)
         {
             _productDAL.Add(product);
+            //TODO: Elasticsearch'e ekle ve indeksle.
         }
 
         public void Delete(int productId)

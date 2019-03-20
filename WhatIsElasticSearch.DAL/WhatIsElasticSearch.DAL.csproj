@@ -14,8 +14,4 @@
     <ProjectReference Include="..\WhatIsElasticSearch.Entities\WhatIsElasticSearch.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Elasticsearch\" />
-  </ItemGroup>
-
 </Project>
