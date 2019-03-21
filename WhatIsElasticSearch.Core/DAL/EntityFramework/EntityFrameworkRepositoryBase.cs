@@ -17,7 +17,7 @@ namespace WhatIsElasticSearch.Core.DAL.EntityFramework
             using (TContext context = new TContext())
             {
                 EntityEntry addedEntry = context.Entry(entity);
-                addedEntry.State = EntityState.Deleted;
+                addedEntry.State = EntityState.Added;
                 context.SaveChanges();
             }
         }

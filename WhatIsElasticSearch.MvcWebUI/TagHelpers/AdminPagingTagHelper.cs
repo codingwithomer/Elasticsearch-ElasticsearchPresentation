@@ -3,13 +3,15 @@ using System.Text;
 
 namespace WhatIsElasticSearch.MvcWebUI.TagHelpers
 {
-    [HtmlTargetElement("admin-product-list-pager")]
-    public class AdminPagingTagHelper : TagHelper
+    [HtmlTargetElement("product-list-pager")]
+    public class PagingTagHelper : TagHelper
     {
         [HtmlAttributeName("page-size")]
         public int PageSize { get; set; }
         [HtmlAttributeName("page-count")]
         public int PageCount { get; set; }
+        [HtmlAttributeName("current-category")]
+        public int CurrentCategory { get; set; }
         [HtmlAttributeName("current-page")]
         public int CurrentPage { get; set; }
 
@@ -23,7 +25,7 @@ namespace WhatIsElasticSearch.MvcWebUI.TagHelpers
             for (int i = 1; i <= PageCount; i++)
             {
                 stringBuilder.AppendFormat("<li class='{0}'>", i == CurrentPage ? "active" : "");
-                stringBuilder.AppendFormat("<a href='/admin/index?page={0}'>{1}</a>", i, i);
+                stringBuilder.AppendFormat("<a href='/product/index?page={0}&category={1}'>{2}</a>", i, CurrentCategory, i);
                 stringBuilder.Append("</li>");
             }
 

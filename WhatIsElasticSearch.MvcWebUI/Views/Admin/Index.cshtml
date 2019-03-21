@@ -5,10 +5,12 @@
     Layout = "~/Views/_AdminLayout.cshtml";
 }
 
-<div class="row">
-    <a asp-controller="Admin" asp-action="AddProduct" class="btn btn-xs btn-success">Add new product</a>
+<h2>Product List</h2>
+
+<div class="text-right">
+    <a asp-controller="Admin" asp-action="AddProduct" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-plus"></span> Add a new product</a>
 </div>
-<div class="row">
+<div>
     <table class="table table-responsive">
         <thead>
             <tr>
@@ -26,17 +28,28 @@
                     <td>@product.ProductName</td>
                     <td>@product.UnitPrice.ToString("#.##")</td>
                     <td>@product.UnitsInStock</td>
-                    <td>
-                        <a class="btn btn-xs btn-primary" asp-controller="Admin" asp-action="UpdateProduct" asp-route-productId="@product.Id"><span class="glyphicon glyphicon-pencil"></span> Update product</a>
-                        <a class="btn btn-xs btn-danger" asp-controller="Admin" asp-action="RemoveProduct" asp-route-productId="@product.Id"><span class="glyphicon glyphicon-remove"></span> Remove product</a>
-                    </td>
+                    <td><a class="btn btn-xs btn-info" asp-controller="Admin" asp-action="UpdateProduct" asp-route-productId="@product.Id"><span class="glyphicon glyphicon-pencil"></span> Update</a></td>
+                    <td><a class="btn btn-xs btn-danger" asp-controller="Admin" asp-action="RemoveProduct" data-id="@product.Id" id="deleteProduct" asp-route-productId="@product.Id"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
-<product-list-pager current-category="@Model.CurrentCategory"
-                    current-page="@Model.CurrentPage"
-                    page-size="@Model.PageSize"
-                    page-count="@Model.PageCount">
-</product-list-pager>
+<admin-product-list-pager current-page="@Model.CurrentPage"
+                          page-size="@Model.PageSize"
+                          page-count="@Model.PageCount">
+</admin-product-list-pager>
+
+<script type="text/javascript">
+    var button = document.getElementById("deleteProduct");
+
+    button.onclick = function () {
+        var dataId = button.getAttribute('data-id');
+        var result = confirm("Are you want to delete this product?");
+        if (result) {
+            window.location.href = "/admin/removeproduct?productId=" + dataId;
+        }
+        else
+            return false;
+    };
+</script>

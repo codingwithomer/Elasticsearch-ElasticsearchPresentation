@@ -5,6 +5,16 @@ namespace WhatIsElasticSearch.DAL.EntityFramework
 {
     public class EFDbContext : DbContext
     {
+        public EFDbContext()
+        {
+
+        }
+
+        public EFDbContext(DbContextOptions<EFDbContext> options) : base(options)
+        {
+
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlite("Data Source=Northwind.db");
